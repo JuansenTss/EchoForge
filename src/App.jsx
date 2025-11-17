@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home/Home'
 import Quests from './pages/Quests/Quests'
+import Challenges from './pages/Challenges/Challenges'
 import Achievements from './pages/Achievements/Achievements'
 import Ascension from './pages/Ascension/Ascension'
 import Transcendence from './pages/Transcendence/Transcendence'
@@ -52,6 +53,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quests" element={<Quests />} />
+            <Route path="/challenges" element={<Challenges />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/ascension" element={<Ascension />} />
             <Route path="/transcendence" element={<Transcendence />} />

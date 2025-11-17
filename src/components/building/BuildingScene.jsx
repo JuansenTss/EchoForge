@@ -50,7 +50,7 @@ const BuildingScene = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="relative"
+                    className="relative flex items-center justify-center gap-1"
                   >
                     {/* Building Icon */}
                     <motion.div
@@ -63,13 +63,13 @@ const BuildingScene = () => {
                         ease: 'easeInOut',
                         delay: index * 0.2,
                       }}
-                      className="text-5xl text-center cursor-help"
+                      className="text-5xl cursor-help"
                     >
                       {building.icon}
                     </motion.div>
 
-                    {/* Count Badge */}
-                    <div className="absolute -top-2 -right-2 bg-medieval-600 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+                    {/* Count Badge - directly beside building */}
+                    <div className="bg-medieval-600 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                       {building.count > 99 ? '99+' : building.count}
                     </div>
 

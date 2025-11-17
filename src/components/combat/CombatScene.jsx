@@ -212,7 +212,7 @@ const CombatScene = () => {
               className={`px-4 py-2 rounded-lg font-medieval text-sm transition-all ${
                 autoAttackEnabled
                   ? 'bg-green-600 hover:bg-green-700 text-white'
-                  : 'bg-gray-600 hover:bg-gray-700 text-white'
+                  : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600'
               }`}
             >
               {autoAttackEnabled ? '⚔️ Auto' : '⏸️ Manual'}
