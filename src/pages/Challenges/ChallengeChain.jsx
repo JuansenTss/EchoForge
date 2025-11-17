@@ -91,7 +91,7 @@ const ChallengeChain = ({ chain, completedTiers, totalDefeated }) => {
                 isCompleted
                   ? 'bg-green-50 dark:bg-green-900 dark:bg-opacity-20 border-green-500'
                   : canClaim
-                  ? `bg-${chain.color}-50 dark:bg-${chain.color}-900 dark:bg-opacity-20 ${getBorderColor()}`
+                  ? `${getBorderColor()} bg-yellow-50 dark:bg-yellow-900 dark:bg-opacity-20`
                   : isLocked
                   ? 'bg-gray-100 dark:bg-gray-800 border-gray-400 opacity-50'
                   : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600'
