@@ -1,0 +1,106 @@
+===============================================
+   ECHOFORGE - INSTALLATION INSTRUCTIONS
+===============================================
+
+STEP 1: INSTALL NODE.JS (If not already installed)
+---------------------------------------------------
+1. Download Node.js from: https://nodejs.org/
+2. Choose the LTS (Long Term Support) version
+3. Run the installer
+4. Follow the installation wizard
+5. Verify installation by opening Command Prompt and typing:
+   node --version
+
+STEP 2: INSTALL GAME DEPENDENCIES
+---------------------------------------------------
+1. Open Command Prompt or Terminal
+2. Navigate to the game folder:
+   cd C:\Project_Swee\EchoForge
+3. Run the installation command:
+   npm install
+4. Wait for installation to complete (may take 2-5 minutes)
+
+STEP 3: START THE GAME
+---------------------------------------------------
+Option A - Using Batch File:
+   Double-click "START_GAME.bat"
+
+Option B - Using Command Line:
+   1. Open Command Prompt
+   2. Navigate to: cd C:\Project_Swee\EchoForge
+   3. Run: npm run dev
+
+STEP 4: PLAY THE GAME
+---------------------------------------------------
+1. Open your web browser
+2. Go to: http://localhost:3000
+3. Create your character
+4. Start playing!
+
+===============================================
+         DEVELOPER TERMINAL ACCESS
+===============================================
+
+Press: Ctrl + Shift + ~  (tilde key)
+
+Quick Commands:
+- /help - Show all commands
+- /give gold 1000000 - Add gold
+- /setlevel 100 - Set level
+- /togglegod - Infinite resources
+
+See DEVELOPER_GUIDE.md for complete command list.
+
+===============================================
+              TROUBLESHOOTING
+===============================================
+
+PROBLEM: "npm is not recognized"
+SOLUTION: Install Node.js (see Step 1)
+
+PROBLEM: "Port 3000 already in use"
+SOLUTION: Run: npm run dev -- --port 3001
+
+PROBLEM: Game won't load
+SOLUTION:
+  1. Clear browser cache
+  2. Try incognito/private mode
+  3. Check terminal for errors
+
+PROBLEM: Save data issues
+SOLUTION: Press Ctrl+Shift+~ and type: /clearsave
+
+===============================================
+              DOCUMENTATION
+===============================================
+
+- README.md - Project overview
+- QUICK_START.md - Detailed installation guide
+- DEVELOPER_GUIDE.md - Complete dev reference
+- FEATURES.md - Feature list
+- SUMMARY.md - Project summary
+
+===============================================
+           SYSTEM REQUIREMENTS
+===============================================
+
+- Windows 7 or higher
+- Node.js 16+
+- Modern web browser (Chrome, Firefox, Edge)
+- 100 MB free disk space
+- Internet connection (for initial setup)
+
+===============================================
+              NEED HELP?
+===============================================
+
+1. Check in-game Guide (Menu → Guide)
+2. Read QUICK_START.md
+3. Read DEVELOPER_GUIDE.md
+4. Check browser console (F12) for errors
+
+===============================================
+
+           ENJOY THE GAME! 🎮✨
+
+===============================================

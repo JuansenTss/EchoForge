@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-medieval-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-medieval-600 hover:bg-medieval-700 text-white rounded-lg font-medieval transition-colors shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-medieval transition-colors;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 border-2 border-medieval-400 dark:border-medieval-600;
+  }
+
+  .resource-display {
+    @apply flex items-center gap-2 px-3 py-1 bg-medieval-100 dark:bg-gray-700 rounded-full border border-medieval-400 dark:border-medieval-600;
+  }
+
+  .pixel-art {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .terminal {
+    @apply bg-black text-green-400 font-mono p-4 rounded-lg shadow-inner;
+  }
+
+  .scroll-medieval {
+    @apply bg-gradient-to-b from-medieval-100 to-medieval-200 dark:from-gray-800 dark:to-gray-900;
+    background-image:
+      linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 100% 20px;
+  }
+}
+
+/* Pixel font */
+.pixel-text {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gold shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #FFD700 0%, #FFF 50%, #FFD700 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Progress bars */
+.progress-bar {
+  @apply relative h-6 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden border-2 border-medieval-600;
+}
+
+.progress-fill {
+  @apply absolute top-0 left-0 h-full bg-gradient-to-r from-medieval-500 to-medieval-600 transition-all duration-300;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-medieval-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-medieval-500 dark:bg-medieval-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-medieval-600 dark:bg-medieval-800;
+}
