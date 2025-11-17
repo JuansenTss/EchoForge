@@ -6,6 +6,7 @@ const Navigation = () => {
   const navItems = [
     { path: '/', label: 'Home', icon: '🏠' },
     { path: '/quests', label: 'Quests', icon: '🗺️' },
+    { path: '/challenges', label: 'Challenges', icon: '⚔️' },
     { path: '/achievements', label: 'Achievements', icon: '🏆' },
     { path: '/ascension', label: 'Ascension', icon: '🌅' },
     { path: '/transcendence', label: 'Transcendence', icon: '✨' },

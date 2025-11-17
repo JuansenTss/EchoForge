@@ -87,6 +87,7 @@ const Menu = () => {
                   <div className="space-y-2 text-sm">
                     <p><strong>🏠 Home:</strong> Build structures to generate resources automatically. Fight monsters for gold and EXP!</p>
                     <p><strong>🗺️ Quests:</strong> Complete quests for rewards and experience. Use "Collect All" button for bulk completion!</p>
+                    <p><strong>⚔️ Challenges:</strong> Defeat monsters to progress through creature evolution chains and earn exclusive equipment!</p>
                     <p><strong>🏆 Achievements:</strong> Unlock achievements for permanent bonuses.</p>
                     <p><strong>🌅 Ascension:</strong> Reset your progress for powerful multipliers.</p>
                     <p><strong>✨ Transcendence:</strong> The ultimate reset for massive bonuses.</p>

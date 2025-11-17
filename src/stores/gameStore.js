@@ -853,6 +853,37 @@ const useGameStore = create((set, get) => ({
 
     return completedCount
   },
+
+  // Complete challenge tier
+  completeChallengeTier: (tierId) => {
+    const state = get()
+    if (state.challenges.completed.includes(tierId)) return false
+
+    set({
+      challenges: {
+        ...state.challenges,
+        completed: [...state.challenges.completed, tierId],
+      },
+    })
+    return true
+  },
+
+  // Equip item (adds to inventory and auto-equips)
+  equipItem: (equipment) => {
+    const state = get()
+
+    // Add to owned if not already owned
+    if (!state.equipment.owned.includes(equipment.id)) {
+      set({
+        equipment: {
+          ...state.equipment,
+          owned: [...state.equipment.owned, equipment.id],
+        },
+      })
+    }
+
+    return true
+  },
 }))
 
 export default useGameStore
