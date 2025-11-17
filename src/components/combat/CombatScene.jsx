@@ -118,15 +118,18 @@ const CombatScene = () => {
 
   return (
     <div className={`relative ${resolutionClass} transition-transform origin-top`}>
-      {/* Combat Arena */}
-      <div className="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 dark:from-gray-900 dark:via-black dark:to-gray-900 rounded-lg p-6 relative overflow-hidden min-h-[400px]">
+      {/* Combat Arena - Entire area is clickable */}
+      <div
+        onClick={handleAttack}
+        className="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 dark:from-gray-900 dark:via-black dark:to-gray-900 rounded-lg p-6 relative overflow-hidden min-h-[400px] cursor-pointer hover:brightness-110 transition-all active:brightness-90"
+      >
         {/* Background elements */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-green-900 to-transparent" />
         </div>
 
         {/* Monster */}
-        <div className="relative z-10 flex flex-col items-center">
+        <div className="relative z-10 flex flex-col items-center pointer-events-none">
           <div className="mb-4">
             <div className="flex items-center gap-2 mb-2">
               <h3 className="text-xl font-medieval font-bold text-white">
@@ -154,24 +157,19 @@ const CombatScene = () => {
           </div>
 
           {/* Monster Display */}
-          <Tooltip content={`Click to attack!\nGold: ${currentMonster.goldMin}-${currentMonster.goldMax}\nEXP: ${currentMonster.expMin}-${currentMonster.expMax}`}>
-            <motion.button
-              onClick={handleAttack}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              className="text-8xl cursor-pointer hover:drop-shadow-2xl transition-all"
-            >
-              {currentMonster.icon}
-            </motion.button>
-          </Tooltip>
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="text-8xl drop-shadow-2xl"
+          >
+            {currentMonster.icon}
+          </motion.div>
 
           {/* Floating Damage Numbers */}
           <AnimatePresence>
@@ -204,10 +202,13 @@ const CombatScene = () => {
         </div>
 
         {/* Auto-attack Toggle */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 pointer-events-auto">
           <Tooltip content={autoAttackEnabled ? 'Auto-attack ON' : 'Auto-attack OFF'}>
             <button
-              onClick={() => setAutoAttackEnabled(!autoAttackEnabled)}
+              onClick={(e) => {
+                e.stopPropagation()
+                setAutoAttackEnabled(!autoAttackEnabled)
+              }}
               className={`px-4 py-2 rounded-lg font-medieval text-sm transition-all ${
                 autoAttackEnabled
                   ? 'bg-green-600 hover:bg-green-700 text-white'
