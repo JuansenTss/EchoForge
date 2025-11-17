@@ -126,10 +126,37 @@ const useGameStore = create((set, get) => ({
     try {
       const savedGame = await localforage.getItem(SAVE_KEY)
       if (savedGame && savedGame.player && savedGame.player.name) {
-        // Valid save with character exists
-        set(savedGame)
+        // Valid save with character exists - migrate old saves
+        const migratedSave = {
+          ...savedGame,
+          // Add challenges if missing (migration for old saves)
+          challenges: savedGame.challenges || {
+            active: null,
+            completed: [],
+          },
+          // Add combat if missing
+          combat: savedGame.combat || {
+            totalDefeated: 0,
+            monstersDefeated: {},
+            currentMonster: null,
+          },
+          // Add equipment if missing
+          equipment: savedGame.equipment || {
+            owned: [],
+            equipped: {},
+          },
+          // Add special quests if missing
+          specialQuests: savedGame.specialQuests || {
+            daily: null,
+            weekly: null,
+            monthly: null,
+            completed: [],
+          },
+        }
+
+        set(migratedSave)
         // Calculate offline progress
-        const offlineTime = Date.now() - savedGame.gameState.lastTick
+        const offlineTime = Date.now() - migratedSave.gameState.lastTick
         get().processOfflineProgress(offlineTime)
       } else {
         // No save or no character created - keep isInitialized as false
